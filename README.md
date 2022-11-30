@@ -10,6 +10,11 @@ Params match ConvertFrom-Csv params. Outsize is the size in bytes of each output
 
 To search through the files afterwards, try 
 
-    Get-Content results.txt | Select-String -Pattern "Bob Smith" -context 0, 3
+    Select-String -Path .\*results.txt -Pattern "Bob Smith" -context 0, 3
     
 This will print 3 lines starting with the matched line.
+If you have multiple output files and want to search all files for something
+
+    Select-String -Path .\*results.txt -Pattern "Bob Smith" | select Path
+
+This will return the file that the match was found in. 
