@@ -24,9 +24,9 @@ function Help{
     Write-Host @"
     USAGE: CsvToTxt -infile[csv.file] -outfile[txt.file] -read[rows] -header[string array] -outsize[bytes]
 
-    EXAMPLE USAGE: CvsToTxt -infile file.csv -outfile results.txt -read 100 -header 'name','location','id' -outsize 104857600
+    EXAMPLE USAGE: CsvToTxt -infile file.csv -outfile results.txt -read 100 -header 'name','location','id' -outsize 104857600
 
-    Search output files with Get-Content results.txt | Select-String -Pattern "Bob Smith" -context 0, 3
+    Search output files with Select-String -Path .\*results.txt -Pattern "Bob Smith" -context 0, 3
     This will print 3 lines starting with the matched line
 "@
 }
